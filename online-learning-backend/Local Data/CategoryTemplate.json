@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "category": "Web Development",
+    "totalContents": 0,
+    "image": "https://www.weresc.com/wp-content/uploads/2023/01/Top-6-Front-End-Web-Development-Tools-to-Increase-Your-Productivity-in-2020-1.jpg"
+  },
+  {
+    "id": 2,
+    "category": "Graphic Design",
+    "totalContents": 0,
+    "image": "https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/06/graphic-designer-desk.jpeg-1.jpg"
+  },
+  {
+    "id": 3,
+    "category": "Programming Languages",
+    "totalContents": 0,
+    "image": "https://cdn-images-1.medium.com/v2/resize:fit:839/1*L5QyrMNalM3yhtgdgBcvkQ.png"
+  },
+  {
+    "id": 4,
+    "category": "Database Design",
+    "totalContents": 0,
+    "image": "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Flevu3nnuvnuslshgx3yl.png"
+  },
+  {
+    "id": 5,
+    "category": "Mobile Development",
+    "totalContents": 0,
+    "image": "https://www.taazaa.com/wp-content/uploads/2024/03/mobile-app-languages.jpg"
+  },
+  {
+    "id": 6,
+    "category": "Data Science",
+    "totalContents": 0,
+    "image": "https://assets.thehansindia.com/h-upload/2022/05/27/1294642-daa.webp"
+  }
+]

@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+  display: none;
+}
+#landingPage h1 {
+  color: #00ffff;
+}
+@media (min-width: 768px) {
+  #landingPage h1 {
+    color: #5bc4c4;
+    -webkit-text-stroke: 3px #00ffff;
+  }
+}
+#navbar #menuItem a {
+  text-shadow: 0 0 10px #00ffff;
+}
+#navbar #menuItem a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff,
+    0 0 80px #00ffff, 0 0 120px #00ffff;
+}
+
+.animated-underline a {
+  position: relative;
+  width: fit-content;
+}
+
+.animated-underline a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  right: 0;
+  bottom: 0;
+}
+
+.animated-underline a:hover::after {
+  animation: hover-underline 0.5s linear;
+}
+.adressFooter-underline span {
+  position: relative;
+  width: min-content;
+}
+.adressFooter-underline span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  right: 0;
+  bottom: 0;
+}
+
+.adressFooter-underline a:hover span::after {
+  animation: hover-underline 0.5s linear;
+}
+
+@keyframes hover-underline {
+  0% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+
+#menuItem .active,
+#mobileMenuItem .active {
+  color: #00ffff;
+}
+#dashboard-tabs .active {
+  color: #000;
+  background-color: #00ffff;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -5px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+table th,
+table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+#desc-show img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+}

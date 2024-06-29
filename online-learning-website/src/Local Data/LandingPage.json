@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "img": "LandingPagePhotos/landing-page-2.jpg",
+    "heading": "The Best Online Learning Platform",
+    "desc": "Learn from video content and you can also chat with the instructor through video chat."
+  },
+  {
+    "id": 2,
+    "img": "LandingPagePhotos/landing-page-1.jpg",
+    "heading": "Get Educated Online From Your Home",
+    "desc": "Learn at your own pace at your comfortable place. Discuss problems from our group chat with other students also."
+  },
+  {
+    "id": 3,
+    "img": "LandingPagePhotos/landing-page-3.jpg",
+    "heading": "Want to Teach? Register Yourself",
+    "desc": "You can become a teacher in our site also. Just register yourself as teacher and post your content."
+  }
+]
