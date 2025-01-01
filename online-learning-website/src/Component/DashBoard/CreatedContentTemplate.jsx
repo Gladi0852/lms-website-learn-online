@@ -31,7 +31,7 @@ const CreatedContentTemplate = ({ courses }) => {
             {data.price}
           </p>
           <p
-            className={`text-center text-white rounded-full py-1 hidden lg:block ${
+            className={`text-center text-white rounded-full py-1 hidden lg:flex justify-center items-center ${
               data.status ? "bg-blue-600" : "bg-gray-500 "
             }`}
           >

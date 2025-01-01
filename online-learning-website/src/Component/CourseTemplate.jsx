@@ -18,12 +18,6 @@ const CourseTemplate = ({ topCourses }) => {
         <div className="content-info w-full md:w-4/5 lg:w-full 2xl:w-4/5">
           <div className="heading flex flex-col gap-2 2xl:gap-1">
             <h1 className="text-xl font-bold md:text-lg">{data.course_name}</h1>
-            {/* <h4 className="font-light md:text-sm xl:text-base">
-              Made by {data.teacher_name}
-            </h4> */}
-            {/* <p className="text-sm font-thin xl:text-base 2xl:text-sm">
-              {data.course_desc}
-            </p> */}
             <div
               className="text-sm font-thin xl:text-base 2xl:text-sm"
               dangerouslySetInnerHTML={{ __html: data.course_desc }}

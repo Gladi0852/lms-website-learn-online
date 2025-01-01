@@ -104,9 +104,9 @@ exports.deleteCourse = async (req, res) => {
     const email = decoded.emailId;
     try {
       const { id } = req.query;
+      await DraftCourses.findByIdAndDelete(id);
       const response = await deleteCourse(id);
       if (response === 200) {
-        await DraftCourses.findByIdAndDelete(id);
         const totalContents = await DraftCourses.find({
           email: email,
         }).countDocuments();

@@ -12,7 +12,8 @@ const CourseContent = () => {
             There are no posts
           </h1>
         ) : (
-          <div className="w-full grid lg:grid-rows-2 lg:grid-cols-2 gap-10">
+          <div className="w-full grid lg:grid-cols-2 gap-10">
+            {/* lg:grid-rows-2 */}
             <CourseTemplate topCourses={courseData.data} />
           </div>
         )

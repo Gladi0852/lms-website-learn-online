@@ -65,7 +65,7 @@ const DashBoardHome = () => {
           <h1 className="text-center text-3xl lg:text-4xl italic font-semibold text-[#00ffff]">
             Your Recent Enrolled Courses
           </h1>
-          <div className="px-5 lg:px-10 mt-8">
+          <div className="px-5 lg:px-10 mt-8 xl:grid xl:grid-cols-2 2xl:block">
             {dashboardData.limitedEnrolledCourse.length > 0 ? (
               <CourseTemplate
                 topCourses={dashboardData.limitedEnrolledCourse}

@@ -45,23 +45,7 @@ const OTPPage = () => {
               Verify OTP
             </motion.p>
             <p>OTP will expire in 10 miniutes</p>
-            {/* <h3>
-              Didn't receive OTP!{" "}
-              <p
-                className={`w-fit py-2 px-3 rounded-xl cursor-pointer text-base inline-block font-medium text-center ${
-                  otpSend
-                    ? "bg-gray-300 pointer-events-none opacity-50"
-                    : "bg-[#00ffff] text-black"
-                }`}
-                onClick={sendOTP}
-              >
-                Send Again
-              </p>
-            </h3> */}
           </form>
-          {/* {otpSend && (
-            <h3 className="text-center">Resend OTP in {countDown} second</h3>
-          )} */}
         </div>
       )}
     </div>

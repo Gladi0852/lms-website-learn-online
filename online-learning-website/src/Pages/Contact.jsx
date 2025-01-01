@@ -58,7 +58,6 @@ const Contact = () => {
         className="px-10 sm:px-20 xl:px-[10rem] w-full my-10"
       >
         <ContactForm />
-        {/* <EmailForm /> */}
       </div>
     </div>
   );
