@@ -4,6 +4,9 @@ import { MdEdit } from "react-icons/md";
 import { FaVideoSlash } from "react-icons/fa";
 import { AddCourseContext } from "../../Store/ContextFiles/addCourse-store";
 
+// const base_url = "http://localhost:8080";
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+
 const VideoUpload = ({
   title,
   name,
@@ -89,9 +92,7 @@ const VideoUpload = ({
           <div className="bg-gray-300 w-full rounded-lg">
             <video preload="auto" controls className="w-full">
               {isServerVideo ? (
-                <source
-                  src={`http://localhost:8080/CourseVideos/${videoUrl}`}
-                />
+                <source src={`${base_url}/CourseVideos/${videoUrl}`} />
               ) : (
                 <source src={videoUrl} type={videoFile.type} />
               )}

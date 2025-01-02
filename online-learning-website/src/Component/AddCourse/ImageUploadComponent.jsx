@@ -4,6 +4,9 @@ import { MdEdit } from "react-icons/md";
 import { FiCameraOff } from "react-icons/fi";
 import { AddCourseContext } from "../../Store/ContextFiles/addCourse-store";
 
+// const base_url = "http://localhost:8080";
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+
 const ImageUploadComponent = ({
   title,
   name,
@@ -78,9 +81,7 @@ const ImageUploadComponent = ({
         <div className="bg-gray-300 w-full h-[40vw] lg:h-[20vw] rounded-lg">
           <img
             src={
-              isServerImage
-                ? `http://localhost:8080/CourseImages/${imageUrl}`
-                : imageUrl
+              isServerImage ? `${base_url}/CourseImages/${imageUrl}` : imageUrl
             }
             alt="Course Image"
             className="w-full h-full object-cover rounded-lg shadow-md"

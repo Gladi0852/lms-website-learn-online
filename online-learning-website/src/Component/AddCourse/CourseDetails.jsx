@@ -14,6 +14,9 @@ import { GrAttachment } from "react-icons/gr";
 import ComingSoon from "./ComingSoon";
 import { AddCourseContext } from "../../Store/ContextFiles/addCourse-store";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const CourseDetails = () => {
   const {
     addCourseData,
@@ -34,7 +37,7 @@ const CourseDetails = () => {
     if (userToken) {
       try {
         const response = await axios.delete(
-          "http://localhost:8080/draftCourses/deleteCoursePhoto",
+          `${base_url}/draftCourses/deleteCoursePhoto`,
           {
             data: { course_image: courseInfo.courseImage }, // data field for the body of the request
             params: { id: params.objectId }, // query parameters

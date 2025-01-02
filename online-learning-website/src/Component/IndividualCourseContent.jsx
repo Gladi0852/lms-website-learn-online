@@ -4,6 +4,9 @@ import { IoIosArrowDropdown } from "react-icons/io";
 import { FaLock } from "react-icons/fa";
 import { useSelector } from "react-redux";
 
+// const base_url = "http://localhost:8080";
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+
 const IndividualCourseContent = ({
   courseData,
   handleEnroll,
@@ -71,7 +74,7 @@ const IndividualCourseContent = ({
           className="w-full lg:w-[45%] p-5 flex justify-center items-center"
         >
           <img
-            src={`http://localhost:8080/CourseImages/${courseData.course_image}`}
+            src={`${base_url}/CourseImages/${courseData.course_image}`}
             alt="Course Photo"
             className="object-left object-cover w-full"
           />
@@ -118,7 +121,7 @@ const IndividualCourseContent = ({
                   </h1>
                   <video preload="auto" controls className="w-full">
                     <source
-                      src={`http://localhost:8080/CourseVideos/${lecture.lecture_video}`}
+                      src={`${base_url}/CourseVideos/${lecture.lecture_video}`}
                     />
                     Your browser does not support the video tag.
                   </video>
@@ -151,7 +154,7 @@ const IndividualCourseContent = ({
         <div className="flex flex-col items-center py-5 gap-5 w-full lg:w-2/3 mx-auto bg-white rounded-3xl shadow-2xl shadow-black">
           <div className="w-[45vw] sm:w-[35vw] md:w-[30vw] lg:w-[18vw] h-[45vw] sm:h-[35vw] md:h-[30vw] lg:h-[18vw] rounded-full">
             <img
-              src={`http://localhost:8080/UploadedImages/${courseData.profile_photo}`}
+              src={`${base_url}/UploadedImages/${courseData.profile_photo}`}
               alt="Instructor Photo"
               className="w-full h-full object-cover rounded-full"
             />

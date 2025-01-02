@@ -1,6 +1,9 @@
 import { createContext, useEffect, useReducer, useState } from "react";
 import axios from "axios";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const INITIAL_STATE = {
   data: "",
   loading: true,
@@ -71,7 +74,7 @@ const CoursesListProvider = ({ children }) => {
     }
     try {
       const response = await axios.get(
-        `http://localhost:8080/course?category=${category}&price=${price}`,
+        `${base_url}/course?category=${category}&price=${price}`,
         { signal }
       );
       const responseData = response.data;

@@ -3,6 +3,9 @@ import demoUserImg from "../../assets/user-icon.webp";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const SideTabs = ({ handleLogOut }) => {
   const { name, profile_photo, role } = useSelector((store) => store.userInfo);
   return (
@@ -18,7 +21,7 @@ const SideTabs = ({ handleLogOut }) => {
             <img
               src={
                 profile_photo
-                  ? `http://localhost:8080/UploadedImages/${profile_photo}`
+                  ? `${base_url}/UploadedImages/${profile_photo}`
                   : demoUserImg
               }
               className="object-cover object-center rounded-full w-[50vw] h-[50vw] md:w-[30vw] md:h-[30vw] lg:w-[15vw] lg:h-[15vw] xl:w-[12vw] xl:h-[12vw] text-white"

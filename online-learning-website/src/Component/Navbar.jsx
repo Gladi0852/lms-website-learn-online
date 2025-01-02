@@ -10,6 +10,9 @@ import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import userImg from "../assets/user-icon.webp";
 
+// const base_url = "http://localhost:8080";
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const { profile_photo } = useSelector((store) => store.userInfo);
@@ -64,7 +67,7 @@ const Navbar = () => {
               <motion.img
                 src={
                   profile_photo
-                    ? `http://localhost:8080/UploadedImages/${profile_photo}`
+                    ? `${base_url}/UploadedImages/${profile_photo}`
                     : userImg
                 }
                 className="object-cover object-center rounded-full h-[10vw] w-[10vw] sm:h-[8vw] sm:w-[8vw] md:h-[6vw] md:w-[6vw] lg:h-[5vw] lg:w-[5vw] xl:h-[4vw] xl:w-[4vw] 2xl:h-[3vw] 2xl:w-[3vw] text-white"

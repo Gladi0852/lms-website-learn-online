@@ -4,6 +4,9 @@ import { useDispatch } from "react-redux";
 import { loginStatusAction } from "../Slices/loginStatusSlice";
 import { userInfoAction } from "../Slices/userInfoSlice";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 export const LoginContext = createContext({
   fetchUser: async () => {},
 });
@@ -15,7 +18,7 @@ const LoginContextProvider = ({ children }) => {
     const signal = controller.signal;
     try {
       const response = await axios.post(
-        "http://localhost:8080/auth/login",
+        `${base_url}/auth/login`,
         {
           email,
           password,

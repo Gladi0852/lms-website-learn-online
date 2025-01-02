@@ -1,6 +1,9 @@
 import { createContext, useEffect, useReducer } from "react";
 import axios from "axios";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const INITIAL_STATE = {
   data: "",
   loading: true,
@@ -67,10 +70,11 @@ const TeachersContextProvider = ({ children }) => {
 
     try {
       const response = await axios.get(
-        `http://localhost:8080/teacher?pageNumber=${pageNumber}`,
+        `${base_url}/teacher?pageNumber=${pageNumber}`,
         { signal }
       );
       const responseData = response.data;
+      // console.log(responseData);
 
       if (responseData.length === 0) {
         dispatchTeachersData({ type: FETCH_SUCCESS, payload: { data: "NIL" } });
@@ -99,7 +103,7 @@ const TeachersContextProvider = ({ children }) => {
     const controller = new AbortController();
     const signal = controller.signal;
     try {
-      const response = await axios.get("http://localhost:8080/teacher/total", {
+      const response = await axios.get(`${base_url}/teacher/total`, {
         signal,
       });
       dispatchTeachersData({

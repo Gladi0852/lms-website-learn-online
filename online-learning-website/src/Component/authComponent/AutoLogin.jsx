@@ -5,6 +5,9 @@ import { loginStatusAction } from "../../Store/Slices/loginStatusSlice";
 import { userInfoAction } from "../../Store/Slices/userInfoSlice";
 import { useNavigate } from "react-router-dom";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const AutoLogin = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -12,14 +15,11 @@ const AutoLogin = () => {
   if (userToken) {
     const verifyToken = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8080/auth/verifyToken",
-          {
-            headers: {
-              Authorization: `Bearer ${userToken}`,
-            },
-          }
-        );
+        const response = await axios.get(`${base_url}/auth/verifyToken`, {
+          headers: {
+            Authorization: `Bearer ${userToken}`,
+          },
+        });
         if (response.status === 200) {
           dispatch(loginStatusAction.authorization({ status: true }));
           dispatch(
@@ -46,7 +46,7 @@ const AutoLogin = () => {
           sessionStorage.removeItem("auth");
           dispatch(loginStatusAction.authorization({ status: false }));
           window.location.reload();
-          navigate("http://localhost:5173");
+          navigate("/");
         } else {
           console.log(error.message);
         }

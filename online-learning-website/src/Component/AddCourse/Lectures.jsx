@@ -6,6 +6,9 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { MdDelete } from "react-icons/md";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const Lectures = ({ courseLectures }) => {
   const { editLecturePage, params, updateCourseLecture } =
     useContext(AddCourseContext);
@@ -25,7 +28,7 @@ const Lectures = ({ courseLectures }) => {
       if (userToken) {
         try {
           const response = await axios.patch(
-            `http://localhost:8080/draftCourses/updateLecture`,
+            `${base_url}/draftCourses/updateLecture`,
             { value: inputValue },
             {
               params: { id: params.objectId },
@@ -57,7 +60,7 @@ const Lectures = ({ courseLectures }) => {
       if (userToken) {
         try {
           const response = await axios.delete(
-            `http://localhost:8080/draftCourses/deleteChapter`,
+            `${base_url}/draftCourses/deleteChapter`,
             {
               data: {
                 lectureId: lectureId,

@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { current } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const ChangePassword = () => {
   useEffect(() => {
     document.title = "LFO - Dashboard-ChangePassword";
@@ -18,7 +21,7 @@ const ChangePassword = () => {
       if (userToken) {
         try {
           const response = await axios.post(
-            "http://localhost:8080/auth/change-password",
+            `${base_url}/auth/change-password`,
             {
               currentPassword: e.target.currPass.value,
               newPassword: e.target.newPass.value,

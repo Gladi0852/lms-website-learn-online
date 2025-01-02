@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 function EmailForm() {
   const [email, setEmail] = useState("");
 
@@ -8,10 +11,9 @@ function EmailForm() {
     e.preventDefault();
     // Call your backend API to send the email
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/send-email",
-        { email }
-      );
+      const response = await axios.post(`${base_url}/api/send-email`, {
+        email,
+      });
       if (response.status === 200) {
         alert("Email sent successfully!");
       } else {

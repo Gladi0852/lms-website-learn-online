@@ -9,6 +9,9 @@ import ImageUploadComponent from "./ImageUploadComponent";
 import VideoUpload from "./VideoUpload";
 import axios from "axios";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const AddLecture = () => {
   const params = useParams();
   const navigate = useNavigate();
@@ -38,7 +41,7 @@ const AddLecture = () => {
     if (userToken) {
       try {
         const response = await axios.delete(
-          "http://localhost:8080/draftCourses/deleteLectureVideo",
+          `${base_url}/draftCourses/deleteLectureVideo`,
           {
             data: {
               lecture_video: lectureInfo.lecture_video,

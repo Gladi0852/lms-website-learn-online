@@ -1,6 +1,9 @@
 import axios from "axios";
 import { createContext, useEffect, useReducer } from "react";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const CATEGORIES_INITIAL_STATE = {
   data: "",
   loading: true,
@@ -78,10 +81,9 @@ const HomePageContextProvider = ({ children }) => {
       return;
     }
     try {
-      const response = await axios.get(
-        "http://localhost:8080/course/category",
-        { signal }
-      );
+      const response = await axios.get(`${base_url}/course/category`, {
+        signal,
+      });
       const responseData = response.data.slice(0, 4);
       if (responseData.length === 0) {
         dispatchCategories({ type: FETCH_SUCCESS, payload: { data: "NIL" } });
@@ -117,10 +119,9 @@ const HomePageContextProvider = ({ children }) => {
       return;
     }
     try {
-      const response = await axios.get(
-        "http://localhost:8080/course/getlimited",
-        { signal }
-      );
+      const response = await axios.get(`${base_url}/course/getlimited`, {
+        signal,
+      });
       const responseData = response.data;
       if (responseData.length === 0) {
         dispatchCourses({ type: FETCH_SUCCESS, payload: { data: "NIL" } });
@@ -156,10 +157,9 @@ const HomePageContextProvider = ({ children }) => {
       return;
     }
     try {
-      const response = await axios.get(
-        "http://localhost:8080/teacher/getlimited",
-        { signal }
-      );
+      const response = await axios.get(`${base_url}/teacher/getlimited`, {
+        signal,
+      });
       const responseData = response.data;
       if (responseData.length === 0) {
         dispatchTeachers({ type: FETCH_SUCCESS, payload: { data: "NIL" } });

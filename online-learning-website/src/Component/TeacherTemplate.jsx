@@ -1,4 +1,6 @@
 import React from "react";
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
 
 const TeacherTemplate = ({ data }) => {
   return (
@@ -7,7 +9,7 @@ const TeacherTemplate = ({ data }) => {
         <div
           className="image w-[95%] h-[95%] bg-center bg-cover rounded-full"
           style={{
-            backgroundImage: `url(http://localhost:8080/UploadedImages/${data.profile_photo})`,
+            backgroundImage: `url(${base_url}/UploadedImages/${data.profile_photo})`,
           }}
         ></div>
       </div>

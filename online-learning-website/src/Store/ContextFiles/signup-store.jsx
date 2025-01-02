@@ -1,6 +1,9 @@
 import { createContext, useReducer, useRef, useState } from "react";
 import axios from "axios";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const INITIAL_STATE = {
   initial: true,
   otpCom: false,
@@ -72,7 +75,7 @@ const SignupContextProvider = ({ children }) => {
     } else {
       try {
         const response = await axios.get(
-          "http://localhost:8080/auth/signup/find",
+          `${base_url}/auth/signup/find`,
           {
             params: {
               email: email,
@@ -110,7 +113,7 @@ const SignupContextProvider = ({ children }) => {
     }
     try {
       await axios.post(
-        "http://localhost:8080/api/emailVerify",
+        `${base_url}/api/emailVerify`,
         {
           email: userData.current.email,
           otp: randomOTP,
@@ -136,7 +139,7 @@ const SignupContextProvider = ({ children }) => {
       dispatchSignupData({ type: SHOW_SUCCESS });
       dispatchSignupData({ type: LOADING_ON });
       try {
-        await axios.post("http://localhost:8080/auth/signup/add", {
+        await axios.post(`${base_url}/auth/signup/add`, {
           name: userData.current.name,
           email: userData.current.email,
           password: userData.current.password,

@@ -2,6 +2,9 @@ import axios from "axios";
 import { createContext, useEffect, useReducer, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const INITIAL_STATE = {
   courseName: "",
   courseDesc: "",
@@ -74,7 +77,7 @@ const AddCourseContextProvider = ({ children }) => {
       if (userToken) {
         try {
           const response = await axios.get(
-            `http://localhost:8080/draftCourses/fetchCourseById`,
+            `${base_url}/draftCourses/fetchCourseById`,
             {
               params: { id: params.objectId },
               headers: {
@@ -116,15 +119,12 @@ const AddCourseContextProvider = ({ children }) => {
       );
       if (confirmation) {
         try {
-          await axios.delete(
-            `http://localhost:8080/draftCourses/deleteCourse`,
-            {
-              params: { id: courseId },
-              headers: {
-                Authorization: `Bearer ${userToken}`,
-              },
-            }
-          );
+          await axios.delete(`${base_url}/draftCourses/deleteCourse`, {
+            params: { id: courseId },
+            headers: {
+              Authorization: `Bearer ${userToken}`,
+            },
+          });
           alert("Course deleted successfully.");
           navigate("/dashboard/my-contents", { replace: true }); // Redirect to the courses list or another page
         } catch (error) {
@@ -153,7 +153,7 @@ const AddCourseContextProvider = ({ children }) => {
       try {
         if (type === "course") {
           const response = await axios.patch(
-            "http://localhost:8080/draftCourses/updateCourse",
+            `${base_url}/draftCourses/updateCourse`,
             formData,
             {
               params: { id: params.objectId },
@@ -165,7 +165,7 @@ const AddCourseContextProvider = ({ children }) => {
         } else if (type === "chapter") {
           formData.append("lectureId", addCourseData.lectureId);
           const response = await axios.patch(
-            "http://localhost:8080/draftCourses/updateLecture",
+            `${base_url}/draftCourses/updateLecture`,
             formData,
             {
               params: { id: params.objectId },
@@ -232,7 +232,7 @@ const AddCourseContextProvider = ({ children }) => {
       if (userToken) {
         try {
           const response = await axios.put(
-            "http://localhost:8080/publisCourse/",
+            `${base_url}/publisCourse/`,
             {},
             {
               params: { id: params.objectId },

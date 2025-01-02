@@ -4,6 +4,9 @@ import { motion } from "framer-motion";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
 import axios from "axios";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const ContactForm = () => {
   const form = useRef();
   const [phoneError, setPhoneError] = useState("");
@@ -32,7 +35,7 @@ const ContactForm = () => {
           async () => {
             const name = formData.get("user_name");
             e.target.reset();
-            await axios.post("http://localhost:8080/api/send-email", {
+            await axios.post(`${base_url}/api/send-email`, {
               email,
               name,
             });

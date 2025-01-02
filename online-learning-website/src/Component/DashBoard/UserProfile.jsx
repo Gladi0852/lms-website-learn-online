@@ -6,6 +6,9 @@ import { userInfoAction } from "../../Store/Slices/userInfoSlice";
 import axios from "axios";
 import demoImg from "../../assets/user-icon.webp";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const UserProfile = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -48,7 +51,7 @@ const UserProfile = () => {
     if (userToken) {
       try {
         const response = await axios.patch(
-          "http://localhost:8080/auth/basic-details",
+          `${base_url}/auth/basic-details`,
           {
             name: formData.name,
             gender: formData.gender,
@@ -89,7 +92,7 @@ const UserProfile = () => {
     if (userToken) {
       try {
         const response = await axios.post(
-          "http://localhost:8080/auth/upload-profile-photo",
+          `${base_url}/auth/upload-profile-photo`,
           imageData,
           {
             headers: {

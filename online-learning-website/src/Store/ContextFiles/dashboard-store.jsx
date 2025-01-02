@@ -1,6 +1,9 @@
 import axios from "axios";
 import { createContext, useEffect, useReducer } from "react";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const INITIAL_STATE = {
   limitedEnrolledCourse: [],
   allEnrolledCourse: [],
@@ -67,7 +70,7 @@ const DashboardContextProvider = ({ children }) => {
       if (userToken) {
         try {
           const response = await axios.get(
-            `http://localhost:8080/auth/fetchEnrolledCourse`,
+            `${base_url}/auth/fetchEnrolledCourse`,
             {
               headers: {
                 Authorization: `Bearer ${userToken}`,
@@ -97,7 +100,7 @@ const DashboardContextProvider = ({ children }) => {
       if (userToken) {
         try {
           const response = await axios.get(
-            `http://localhost:8080/draftCourses/fetchCourses`,
+            `${base_url}/draftCourses/fetchCourses`,
             {
               headers: {
                 Authorization: `Bearer ${userToken}`,

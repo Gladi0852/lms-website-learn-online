@@ -6,6 +6,9 @@ import axios from "axios";
 import IndividualCourseContent from "./IndividualCourseContent";
 import { useSelector } from "react-redux";
 
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const IndividualCoursePage = () => {
   const { enrolled_course, email } = useSelector((store) => store.userInfo);
   const params = useParams();
@@ -18,12 +21,9 @@ const IndividualCoursePage = () => {
     const fetchCourse = async () => {
       try {
         const courseID = params.courseID;
-        const response = await axios.get(
-          "http://localhost:8080/course/fetchCourse",
-          {
-            params: { courseID },
-          }
-        );
+        const response = await axios.get(`${base_url}/course/fetchCourse`, {
+          params: { courseID },
+        });
         if (response.status === 200) {
           if (response.data.email === email) {
             setEnrolledStatus(true);
@@ -54,7 +54,7 @@ const IndividualCoursePage = () => {
     if (userToken) {
       try {
         const response = await axios.patch(
-          "http://localhost:8080/auth/addCourseAsEnrolled",
+          `${base_url}/auth/addCourseAsEnrolled`,
           { courseID: params.courseID },
           {
             headers: {

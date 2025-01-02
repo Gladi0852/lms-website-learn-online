@@ -2,6 +2,10 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+
+const base_url = "https://lms-backend-1-je3i.onrender.com";
+// const base_url = "http://localhost:8080";
+
 const CourseAdd = () => {
   useEffect(() => {
     document.title = "LFO - Create Course";
@@ -28,7 +32,7 @@ const CourseAdd = () => {
       if (userToken) {
         try {
           const response = await axios.post(
-            "http://localhost:8080/draftCourses/",
+            `${base_url}/draftCourses/`,
             { title: title, category: category },
             {
               headers: {
@@ -53,9 +57,7 @@ const CourseAdd = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8080/course/getAllCategory"
-        );
+        const response = await axios.get(`${base_url}/course/getAllCategory`);
         setCategories(response.data);
         sessionStorage.setItem("categories", JSON.stringify(response.data));
       } catch (error) {
