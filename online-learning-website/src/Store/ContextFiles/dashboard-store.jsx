@@ -97,6 +97,7 @@ const DashboardContextProvider = ({ children }) => {
     };
     const fetchContent = async () => {
       const userToken = localStorage.getItem("userToken");
+      console.log(userToken);
       if (userToken) {
         try {
           const response = await axios.get(

@@ -1,9 +1,7 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import DashboardHeader from "./DashboardHeader";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import ErrorPage from "../ErrorPage";
 import NoDataPage from "../NoDataPage";
 import { IoIosAddCircleOutline } from "react-icons/io";
 
